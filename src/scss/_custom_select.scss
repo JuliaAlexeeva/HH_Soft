@@ -1,0 +1,164 @@
+@import "mixins";
+// =========================================================
+// Custom SELECT
+.custom-select__field {
+}
+.select-field {
+    @media (max-width: 991.98px) {
+        position: relative;
+        // margin: 0px 0px 40px 0px;
+        // width: 100%;
+        width: 60%;
+        height: 60px;
+        // display: flex;
+        display: none;
+        align-items: center;
+        border: 1px solid var(--button-grey-color);
+        border-radius: 5px;
+        background-color: transparent;
+        padding: 0 50px 0 35px;
+        // white-space: nowrap;
+        cursor: pointer;
+        @include fontz(14);
+        line-height: 130%;
+        &.active {
+            &::before {
+                transform: rotate(-35deg);
+            }
+            &::after {
+                transform: rotate(35deg);
+            }
+            .select-field__items {
+                display: block;
+            }
+        }
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            margin: -2px 0px 0px 0px;
+            right: 0;
+            background: var(--button-grey-color);
+            width: 10px;
+            height: 4px;
+        }
+        &::before {
+            transform: rotate(35deg);
+            right: 26px;
+        }
+        &::after {
+            transform: rotate(-35deg);
+            right: 20px;
+        }
+    }
+    // position: relative;
+    // margin: 0px 0px 40px 0px;
+    // // width: 100%;
+    // width: 60%;
+    // height: 60px;
+    // // display: flex;
+    // display: none;
+    // align-items: center;
+    // border: 1px solid var(--button-grey-color);
+    // border-radius: 5px;
+    // background-color: transparent;
+    // padding: 0 50px 0 35px;
+    // // white-space: nowrap;
+    // cursor: pointer;
+    // @include fontz(14);
+    // line-height: 130%;
+    // &.active {
+    //     &::before {
+    //         transform: rotate(-35deg);
+    //     }
+    //     &::after {
+    //         transform: rotate(35deg);
+    //     }
+    //     .select-field__items {
+    //         display: block;
+    //     }
+    // }
+    // &::after, &::before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 50%;
+    //     margin: -2px 0px 0px 0px;
+    //     right: 0;
+    //     background: var(--button-grey-color);
+    //     width: 10px;
+    //     height: 4px;
+    // }
+    // &::before {
+    //     transform: rotate(35deg);
+    //     right: 26px;
+    // }
+    // &::after {
+    //     transform: rotate(-35deg);
+    //     right: 20px;
+    // }
+    @media (max-width: 479.98px) {
+        width: 100%;
+    }
+}
+// =========================================================
+.select-field__initial-value {
+    display: none;
+    color: var(--button-grey-color);
+    @media (max-width: 991.98px) {
+        display: block;
+    }
+}
+// =========================================================
+.select-field__items {
+    @media (max-width: 991.98px) {
+        display: none;
+        position: absolute;
+        // для переполнения
+        // max-height: 180px;
+        overflow: auto;
+        left: 0;
+        right: 0;
+        top: 100%;
+        border: 1px solid var(--button-grey-color);
+        z-index: 20;
+        background-color: var(--main-bcg-color);
+        border-radius: 0 0 5px 5px;
+    }
+    // display: none;
+    // position: absolute;
+    // // для переполнения
+    // // max-height: 180px;
+    // overflow: auto;
+    // left: 0;
+    // right: 0;
+    // top: 100%;
+    // border: 1px solid var(--button-grey-color);
+    // z-index: 20;
+    // background-color: var(--main-bcg-color);
+    // border-radius: 0 0 5px 5px;
+}
+// =========================================================
+.select-field__item {
+    @media (max-width: 991.98px) {
+        color: var(--hover-link-color);
+        font-weight: 500;
+        @include fontz(18);
+        padding: 20px 35px;
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--button-grey-color);
+        }
+        &:nth-child(odd) {
+            background-color: var(--select-bcg-color);
+        }
+    }
+    // color: var(--hover-link-color);
+    // font-weight: 500;
+    // @include fontz(18);
+    // padding: 20px 35px;
+    // &:not(:last-child) {
+    //     border-bottom: 1px solid var(--button-grey-color);
+    // }
+    // &:nth-child(odd) {
+    //     background-color: var(--select-bcg-color);
+    // }
+}

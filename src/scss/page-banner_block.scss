@@ -1,0 +1,217 @@
+@import "mixins";
+// =========================================================
+.page__banner {
+    background-color: var(--banner-bcg-color);
+    padding: 125px 0 90px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    @media (max-width: 767.98px) {
+        padding: 70px 0 80px;
+    }
+}
+// =========================================================
+.page__banner-decor-1 {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    margin: 0px 0px 0px -1350px;
+    z-index: -3;
+    width: 2700px;
+    height: 600px;
+    background: linear-gradient(267.06deg, #000000 -3.62%, #010631 103.62%);
+    transform: rotate(-10deg);
+    @media (max-width: 767.98px) {
+        bottom: 170px;
+    } 
+}
+.page__banner-decor-2 {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    z-index: -2;
+    width: 2222px;
+    height: 314px;
+    background: linear-gradient(267.65deg, rgba(201, 69, 247, 0.2) 20.33%, rgba(69, 129, 247, 0) 89.01%);
+    transform: rotate(-12deg);
+    @media (max-width: 767.98px) {
+        display: none;
+    }
+}
+.page__banner-decor-3 {
+    position: absolute;
+    bottom: -280px;
+    left: -15%;
+    z-index: -1;
+    width: 2215px;
+    height: 315px;
+    background: linear-gradient(271.92deg, #000211 3.69%, #310156 116.09%);
+    transform: rotate(5deg);
+    @media (max-width: 767.98px) {
+        display: none;
+    }
+}
+// =========================================================
+.cirle-decor-page {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+}
+.page__banner-decor-circle-1 {
+    top: calc(150*100%/350);
+    left: calc(50*100%/1900);
+    width: 32px;
+    height: 32px;
+    background: radial-gradient(102.63% 102.63% at 31.02% 24.87%, #C2A5D1 0%, #B590CD 16.12%, #9A66C5 42.44%, #583C99 100%);
+    filter: blur(2.5px);
+    @media (max-width: 991.98px) {
+        transform: scale(0);
+        visibility: hidden;
+    }
+}
+.page__banner-decor-circle-2 {
+    bottom: calc(70*100%/350);
+    left: calc(75*100%/1900);
+    width: 21px;
+    height: 21px;
+    background: radial-gradient(102.63% 102.63% at 31.02% 24.87%, #A5C1D1 0%, #909ACD 16.12%, #6675C5 42.44%, #3C6199 100%);
+    filter: blur(7.5px);
+    @media (max-width: 991.98px) {
+        left: calc(50*100%/1900);
+    }
+}
+.page__banner-decor-circle-3 {
+    top: calc(185*100%/350);
+    left: calc(850*100%/1900);
+    width: 21px;
+    height: 21px;
+    background: radial-gradient(102.63% 102.63% at 31.02% 24.87%, #A5C1D1 0%, #909ACD 16.12%, #6675C5 42.44%, #3C6199 100%);
+    filter: blur(7.5px);
+    @media (max-width: 991.98px) {
+        background: radial-gradient(102.63% 102.63% at 31.02% 24.87%, #C2A5D1 0%, #B590CD 16.12%, #9A66C5 42.44%, #583C99 100%);
+        filter: blur(2.5px);
+        width: 24px;
+        height: 24px;
+        top: calc(205*100%/350);
+        left: unset;
+        right: calc(50*100%/1900);
+    }
+}
+.page__banner-decor-circle-4 {
+    bottom: calc(62*100%/350);
+    left: calc(900*100%/1900);
+    width: 59px;
+    height: 59px;
+    background: radial-gradient(102.63% 102.63% at 31.02% 24.87%, #C2A5D1 0%, #B590CD 16.12%, #9A66C5 42.44%, #583C99 100%);
+    filter: blur(2.5px);
+    @media (max-width: 991.98px) {
+        bottom: calc(-20*100%/350);
+        left: calc(300*100%/1900);
+    }
+}
+.page__banner-decor-circle-5 {
+    top: calc(150*100%/350);
+    right: calc(740*100%/1900);
+    width: 38px;
+    height: 38px;
+    background: radial-gradient(102.63% 102.63% at 31.02% 24.87%, #A5C1D1 0%, #909ACD 16.12%, #6675C5 42.44%, #3C6199 100%);
+    filter: blur(7.5px);
+    @media (max-width: 991.98px) {
+        top: calc(90*100%/350);
+        right: calc(360*100%/1900);
+    }
+}
+.page__banner-decor-circle-6 {
+    bottom: calc(50*100%/350);
+    right: calc(500*100%/1900);
+    width: 53px;
+    height: 53px;
+    background: linear-gradient(176.15deg, #8EA2E7 19.68%, #BA87D2 96.85%);
+    -webkit-appearance: none;
+    box-shadow: 0px 4px 70px rgba(155, 215, 195, 0.8);
+    @media (max-width: 991.98px) {
+        transform: scale(0);
+        visibility: hidden;
+    }
+}
+.page__banner-decor-circle-7 {
+    bottom: calc(95*100%/350);
+    right: calc(320*100%/1900);
+    width: 119px;
+    height: 119px;
+    background: radial-gradient(102.63% 102.63% at 31.02% 24.87%, #A5C1D1 0%, #909ACD 16.12%, #6675C5 42.44%, #3C6199 100%);
+    filter: blur(3px);
+    @media (max-width: 991.98px) {
+        transform: scale(0);
+        visibility: hidden;
+    }
+}
+.page__banner-decor-circle-8 {
+    bottom: calc(60*100%/350);
+    right: calc(60*100%/1900);
+    width: 21px;
+    height: 21px;
+    background: radial-gradient(102.63% 102.63% at 31.02% 24.87%, #A5C1D1 0%, #909ACD 16.12%, #6675C5 42.44%, #3C6199 100%);
+    filter: blur(7.5px);
+    @media (max-width: 991.98px) {
+        bottom: calc(40*100%/350);
+        right: calc(180*100%/1900);
+    }
+}
+// =========================================================
+.page-banner__container {
+}
+// =========================================================
+.page-banner__block {
+}
+.page-banner {
+}
+// =========================================================
+.page-banner__navigation {
+    margin: 0px 0px 50px 0px;
+    a {
+        @include fontz(12);
+        line-height: 130%;
+        &:not(:last-child) {
+            margin: 0px 45px 0px 0px;
+            position: relative;
+            &::before,&::after {
+                content: '';
+                position: absolute;
+                right: -30px;
+                background-color: var(--navigation-current-color);
+                width: 7px;
+                height: 2px;
+            }
+            &::before {
+                top: 50%;
+                transform: rotate(45deg);
+                margin: -3px 0px 0px 0px;
+            }
+            &::after {
+                bottom: 50%;
+                transform: rotate(-45deg);
+                margin: 0px 0px -3px 0px;
+            }
+        }
+    }
+}
+// =========================================================
+.navigation-page__home {
+    color: var(--light-text-color);
+    @media (min-width: 991.98px) {
+        &:hover {
+            color: var(--hover-link-color);
+        }
+    }
+}
+.navigation-page__current {
+    pointer-events: none;
+    color: var(--navigation-current-color) !important;
+}
+// =========================================================
+.page-banner__title {
+    @media (max-width: 991.98px) {
+        text-align: center;
+    }
+}

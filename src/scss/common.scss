@@ -1,0 +1,552 @@
+/* ------------------------------------------------------------------------------------------- */
+// Переменные
+:root {
+    --default__transition: all 0.3s ease 0s;
+
+    // Text/border color
+    --main-color: #1A1A1A;
+    --hover-link-color: #9166F0;
+    --grey-text-color: #B6B6B6;
+    --grey-text-color-2: #666666;
+    --light-text-color: #FFFFFF;
+    --running-ticker-color: #635D6E;
+    --skills-border-color: #D9D9D9;
+    --button-grey-color: #BDBDBD;
+    --policy-grey-color: #656565;
+    --input-placeholder-color: #5B5B5B;
+    --navigation-current-color: #AFAFAF;
+    --steps-text-color: #EAEAEA;
+
+    // Background
+    --main-bcg-color: #FFFFFF;
+    --banner-bcg-color: #000000;
+    --burger-bcg: #000210;
+    --black-bcg-color: #000000;
+    --services-card-bcg: #FFFFFF;
+    --footer-bcg: #010423;
+    --arrow-bcg-color: #9166F0;
+    --select-bcg-color: #f1f1f1;
+    --confidence-icons-bcg: linear-gradient(275.53deg, #9166F0 8.77%, #633BBC 85.8%);
+    --popup-bcg-color: #FFFFFF;
+    --popup-close-bcg: #DCDCDC;
+
+    // Buttons
+    --burger-bcg-scroll: linear-gradient(190.73deg, #9166F0 14.88%, #210C51 88.19%);
+    --button-bcg: linear-gradient(275.53deg, #9166F0 8.77%, #210C51 85.8%);
+    --button-bcg-inverse: linear-gradient(275.53deg, #210C51 8.77%, #9166F0 85.8%);
+    
+}
+/* ------------------------------------------------------------------------------------------- */
+@import "mixins";
+@import "custom_select";
+@import "page-banner_block";
+@import "feedback_block";
+/* ------------------------------------------------------------------------------------------- */
+/* Чтобы скролл был на всем макете */
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+/* ------------------------------------------------------------------------------------------- */
+// Любые объект, в классе которого содержится такой класс __container, то к нему применить эти свойства
+// то есть теперь достаточно просто писать header__container и все, без приписки доп класса _container
+[class*="__container"] {
+    max-width: 1350px; // + 60px из-за отступа безопасности
+    margin: 0 auto;
+    padding: 0 30px;
+    transition: var(--default__transition);
+    /* PC-huge */
+    @media (max-width: 1345.98px) {
+        
+    }
+    @media (max-width: 1245.98px) {
+        
+    }
+    /* --- PC --- */
+    @media (max-width: 1145.98px) {
+        
+    }
+    /* --- PC Small --- */
+    @media (max-width: 1057px) {
+        
+    }
+    /* --- TABLET --- */
+    @media (max-width: 991.98px) {
+        padding: 0 15px;
+    }
+    
+    /* --- MOBILE --- */
+    @media (max-width: 767.98px) {
+        
+    }
+    /* --- MOBILE SMALL --- */
+    @media (max-width: 479.98px) {
+       
+    }
+    /* --- MOBILE LITTLE --- */
+    @media (max-width: 379.98px) {
+
+    }
+}
+// TODO: DRY-Blocks !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/* ============================================================================================== */
+.dry-button {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    background: var(--button-bcg);
+    color: var(--light-text-color);
+    @include fontz(18);
+    font-weight: 700;
+    line-height: 130%;
+    transition: var(--default__transition);
+    &.transparent {
+        color: var(--hover-link-color);
+        border: 1px solid var(--hover-link-color);
+        background: transparent;
+        @media (min-width: 991.98px) {
+            &:hover {
+                color: var(--light-text-color);
+                border: unset;
+            }
+        }
+    }
+    @media (max-width: 1345.98px) {
+        height: 60px;
+    }
+    @media (max-width: 1145.98px) {
+        @include fontz(17);
+    }
+    @media (min-width: 991.98px) {
+        &:hover {
+            background: var(--button-bcg-inverse);
+        }
+    }
+    @media (max-width: 991.98px) {
+        @include fontz(16);
+    }
+    @media (max-width: 767.98px) {
+        @include fontz(14);
+    }
+}
+// ======================================================
+._category-collection {
+}
+._category-collection__item {
+}
+._category-collection__spoiler {
+    width: 240px;
+    margin: 60px 0px 0px 0px;
+    &.hidden-button {
+        display: none;
+    }
+    @media (max-width: 991.98px) {
+        margin: 40px 0px 0px 0px;
+    }
+}
+.dry-button__categories {
+    @media (min-width: 991.98px) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+.dry-button__category {
+    transition: var(--default__transition);
+    @media (min-width: 991.98px) {
+        padding: 16px 25px 17px;
+        border: 1px solid var(--button-grey-color);
+        border-radius: 5px;
+        @include fontz(18);
+        line-height: 130%;
+        font-weight: 500;
+        color: var(--button-grey-color);
+        background-color: transparent;
+        cursor: pointer;
+        &.active {
+            background: var(--hover-link-color);
+            border: 1px solid var(--hover-link-color);
+            color: var(--light-text-color);
+        }
+        span {
+            font-weight: 400;
+        }
+        &:hover {
+            background: var(--hover-link-color);
+            border: 1px solid var(--hover-link-color);
+            color: var(--light-text-color);
+        }
+    }
+}
+// ======================================================
+.dry-bcg {
+    position: absolute;
+    top: 40px;
+    left: -10%;
+    width: 2226px;
+    height: 315px;
+    z-index: -1;
+    background: linear-gradient(267.65deg, rgba(201, 69, 247, 0.2) 20.33%, rgba(69, 129, 247, 0) 89.01%);
+    opacity: 0.4;
+    @media (max-width: 991.98px) {
+        left: -50%; 
+    }
+    @media (max-width: 479.98px) {
+        width: 978px;
+        height: 138px;
+        top: 40px;
+        left: -65%;
+    }
+    &.left {
+        transform: matrix(-0.98, -0.21, -0.21, 0.98, 0, 0);
+    }
+    &.right {
+        transform: rotate(-12.22deg);
+    }
+}
+// ======================================================
+.dry-link__hover {
+    position: relative;
+    transition: var(--default__transition);
+    &::after {
+        background: var(--hover-link-color);
+    }
+    @media (min-width: 991.98px) {
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            transition: width 0.5s;
+        }
+        &:hover {
+            &::after {
+                left: 0;
+                width: 100%;
+            }
+        }
+    }
+}
+// ======================================================
+// Вешаем класс на карточку
+.dry-arrow-card {
+    * {
+        transition: var(--default__transition);
+    }
+    @media (min-width: 991.98px) {
+        &:hover {
+            .dry-arrow-link {
+                a > b > img {
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+    }
+}
+// Вешаем на блок с ссылкой
+.dry-arrow-link {
+    * {
+        transition: var(--default__transition);
+    }
+    margin: 25px 0px 0px 0px;
+    a {
+        display: flex;
+        align-items: center;
+        b {
+            background-color: var(--arrow-bcg-color);
+            width: 54px;
+            height: 54px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 20px 0px 0px;
+            @media (max-width: 1245.98px) {
+                width: 45px;
+                height: 45px;
+                img {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+            @media (max-width: 1145.98px) {
+                margin: 0px 15px 0px 0px;
+            }
+            @media (max-width: 991.98px) {
+                width: 40px;
+                height: 40px;
+                img {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+        span {
+            color: var(--hover-link-color);
+            @include fontz(20);
+            font-weight: 700;
+            position: relative;
+            &::after {
+                background: var(--hover-link-color);
+            }
+            @media (max-width: 1245.98px) {
+                @include fontz(18);
+            }
+            @media (max-width: 1145.98px) {
+                @include fontz(16);
+            }
+            @media (max-width: 991.98px) {
+                @include fontz(14);
+            }
+        }
+        @media (min-width: 991.98px) {
+            span {
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    bottom: -3px;
+                    width: 0;
+                    height: 2px;
+                    transition: width 0.5s;
+                }
+            }
+            &:hover {
+                b > img {
+                    transform: rotate(-90deg);
+                }
+                span {
+                    &::after {
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+// ======================================================
+.dry-card__decor {
+    // flex: 0 0 35%;
+    background-color: var(--black-bcg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    color: var(--light-text-color);
+    overflow: hidden;
+    position: relative;
+    transition: var(--default__transition);
+    @media (max-width: 1245.98px) {
+        padding: 0 10px;
+    }
+    @media (max-width: 991.98px) {
+        padding: 25px 25px 50px;
+        flex: unset;
+        width: 100%;
+        height: 100%;
+    }
+}
+.dry-card__decor-bcg {
+    position: absolute;
+    width: 820px;
+    height: 103px;
+    left: -160%;
+    background: linear-gradient(267.65deg, rgba(201, 69, 247, 0.2) 20.33%, rgba(69, 129, 247, 0) 89.01%);
+    transition: var(--default__transition);
+    &:nth-child(1) {
+        top: -7%;
+        background: linear-gradient(267.65deg, rgba(201, 69, 247, 0.34) 20.33%, rgba(69, 129, 247, 0) 89.01%);
+        transform: rotate(-12.22deg);
+        @media (max-width: 991.98px) {
+            top: -10%;
+            left: -40px;
+        }
+    }
+    &:nth-child(2) {
+        top: -2%;
+        transform: matrix(-0.98, -0.21, -0.21, 0.98, 0, 0);
+        @media (max-width: 991.98px) {
+            top: 20%;
+            left: -75%;
+        }
+    }
+    &:nth-child(3) {
+        bottom: -7%;
+        background: linear-gradient(267.65deg, rgba(201, 69, 247, 0.34) 20.33%, rgba(69, 129, 247, 0) 89.01%);
+        transform: matrix(-0.98, -0.21, -0.21, 0.98, 0, 0);
+        @media (max-width: 991.98px) {
+            display: none;
+        }
+    }
+    &:nth-child(4) {
+        bottom: -5%;
+        transform: rotate(-12.22deg);
+        @media (max-width: 991.98px) {
+            display: none;
+        }
+    }
+}
+.dry-card__decor-logo {
+    width: 118px;
+    height: 22px;
+    margin: 0px 0px 30px 0px;
+    position: relative;
+    z-index: 1;
+    transition: var(--default__transition);
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    @media (max-width: 991.98px) {
+        width: 80px;
+        height: 15px;
+        margin: 0px 0px 25px 0px;
+    }
+}
+.dry-card__decor-name {
+    @include fontz(18);
+    line-height: 136%;
+    text-transform: uppercase;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    transition: var(--default__transition);
+    @media (max-width: 1245.98px) {
+        @include fontz(16);
+    }
+    @media (max-width: 991.98px) {
+        @include fontz(20);
+        
+    }
+    @media (max-width: 479.98px) {
+        max-width: 220px;
+    }
+}
+// ======================================================
+.dry-padding {
+    transition: var(--default__transition);
+    padding: 150px 0 0;
+    @media (max-width: 1345.98px) {
+        padding: 120px 0 0;
+    }
+    @media (max-width: 991.98px) {
+        padding: 90px 0 0;
+    }
+    &.pages {
+
+    }
+    &.last {
+        padding: 150px 0 80px;
+        @media (max-width: 1345.98px) {
+            padding: 120px 0 65px;
+        }
+        @media (max-width: 991.98px) {
+            padding: 90px 0 55px;
+        }
+    }
+}
+// Верхний отступ у страниц
+.dry-padding-pages {
+    transition: var(--default__transition);
+    padding: 65px 0 0;
+    @media (max-width: 991.98px) {
+        padding: 45px 0 0;
+    }
+}
+// ======================================================
+.dry-title {
+    * {
+        transition: var(--default__transition);
+    }
+    text-transform: uppercase;
+    font-weight: 700;
+    @include fontz(50);
+    line-height: 130%;
+    &:not(:last-child) {
+        margin: 0px 0px 75px 0px;
+        @media (max-width: 1345.98px) {
+            margin: 0px 0px 60px 0px;
+        }
+        @media (max-width: 1145.98px) {
+            margin: 0px 0px 50px 0px;
+        }
+        @media (max-width: 991.98px) {
+            margin: 0px 0px 40px 0px;
+        }
+    }
+    &.white {
+        color: var(--light-text-color);
+    }
+    &.black {
+        color: var(--main-color);
+    }
+    @media (max-width: 1345.98px) {
+        @include fontz(40);
+    }
+    @media (max-width: 1145.98px) {
+        @include fontz(35);
+    }
+    @media (max-width: 991.98px) {
+        @include fontz(30);
+    }
+    @media (max-width: 767.98px) {
+        @include fontz(26);
+        width: 100%;
+        text-align: center;
+    }
+}
+
+// ======================================================
+.dry-input {
+    padding: 20px;
+    width: 100%;
+    height: 70px;
+    color: var(--main-color);
+    border: 1px solid var(--hover-link-color);
+    border-radius: 10px;
+    @include fontz(18);
+    transition: var(--default__transition);
+    &::placeholder {
+        @include fontz(16);
+        color: var(--input-placeholder-color);
+    }
+    &:focus {
+        box-shadow: 0 0 10px var(--hover-link-color);
+    }
+
+    &:focus::-webkit-input-placeholder {
+        color: transparent;
+    }
+    &:focus::-moz-placeholder {
+        color: transparent;
+    }
+    &:focus:-moz-placeholder {
+        color: transparent;
+    }
+    &:focus:-ms-input-placeholder {
+        color: transparent;
+    }
+}
+
+/* ---------------------------MAIN------------------------------------------------------------ */
+.main { 
+    /* позволяем контенту увеличиваться и он прибивает футер вниз */
+    flex: 1 1 auto;
+    * {
+        transition: var(--default__transition);
+    }
+}
+/* ------------------------------------------------------------------------------------------- */

@@ -1,0 +1,53 @@
+@@include('../pages_banner.html', {
+    "title": "Контакты",
+})
+
+<section class="contacts__page dry-padding-pages">
+    <div class="contacts-page__container">
+        <div class="contacts-page__block page-contacts">
+            <div class="page-contacts__info">
+                <h2 class="page-contacts__info-title dry-title black">Свяжитесь с нами, <br> и мы проконсультируем <br> вас по всем вопросам</h2>
+
+                <div class="page-contacts__info-data">
+                    <div class="page-contacts__info-person">
+                        <div class="page-contacts__info-person-img">
+                            <img src="@img/common/feedback-person.png" alt="">
+                        </div>
+                        <div class="page-contacts__info-person-name">
+                            <span>Александр Кульгинский</span>
+                            <p>Управляющий партнер</p>
+                        </div>
+                    </div>
+    
+                    <a class="dry-link__hover" href="tel:+79826232617">+7 (982) 623 26 17</a>
+                    <a class="dry-link__hover" href="mailto:admin@hh-soft.ru">admin@hh-soft.ru</a>
+
+                    <div class="page-contacts__info-socials">
+                        <a href="#"><img src="@img/common/vk.svg" alt="vk"></a>
+                        <a href="#"><img src="@img/common/youtube.svg" alt="youtube"></a>
+                        <a href="#"><img src="@img/common/telegram.svg" alt="telegram"></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <form action="#" method="GET" class="page-contacts__form contacts-form">
+                <div class="contacts-form__inputs">
+                    <textarea placeholder="Ваше сообщение" name="message" class="dry-input _req"></textarea>
+                    <input placeholder="Ваше имя" type="text" name="name" class="dry-input _req">
+                    <input placeholder="Телефон" type="tel" name="user_phone" class="dry-input _req">
+                    <input placeholder="Электронная почта" type="text" name="email" class="dry-input _req">
+
+                    <div class="contacts-form__action">
+                        <!-- <button type="submit" class="contacts-form__button dry-button">Обсудить проект</button> -->
+                        <button class="contacts-form__button dry-button"><a href="#popup__success" class="popup__link">Обсудить проект</a></button>
+                        <p class="contacts-form__policy">Нажимая на кнопку, вы соглашаетесь <br> с <a class="dry-link__hover" href="#">Политикой конфиденциальности</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- POPUPS -->
+@@include('../popup_success.html', {})

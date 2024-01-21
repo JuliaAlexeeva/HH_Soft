@@ -1,0 +1,407 @@
+@import "_mixins";
+// ========================================================================================
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 100;
+    * {
+        transition: var(--default__transition);
+    }
+    
+    @media (min-width: 991.98px) {
+        &.active-popup-scroll {
+            background-color: #FFFFFF;
+            -webkit-appearance: none;
+            box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+            .header__block {
+                height: 80px;
+            }
+            @media (max-width: 991.98px) {
+                background-color: transparent;
+                // Иначе при мобилке header перекрывает активную область сайта
+                left: unset;
+                right: 0;
+                width: 100px;
+    
+                box-shadow: unset;
+                .header__block-logo {
+                    transform: translate(0, -80px) scale(0);
+                }
+                .header__burger-button {
+                    background: var(--burger-bcg-scroll);
+                    border: unset;
+                }
+            }
+            .menu__link {
+                color: var(--main-color);
+            }
+            .menu__contacts-phone {
+                a {
+                    color: var(--main-color);
+                }
+            }
+        }
+    }
+
+    &.active-scroll {
+        background-color: #FFFFFF;
+        -webkit-appearance: none;
+        box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+        .header__block {
+            height: 80px;
+        }
+        @media (max-width: 991.98px) {
+            background-color: transparent;
+            // Иначе при мобилке header перекрывает активную область сайта
+            left: unset;
+            right: 0;
+            width: 100px;
+            box-shadow: unset;
+            .header__block-logo {
+                transform: translate(0, -80px) scale(0);
+            }
+            .header__burger-button {
+                background: var(--burger-bcg-scroll);
+                border: unset;
+            }
+        }
+        .menu__link {
+            color: var(--main-color);
+            @media (min-width: 991.98px) {
+                &:hover {
+                    color: var(--hover-link-color);
+                }
+            }
+        }
+        .menu__contacts-phone {
+            a {
+                color: var(--main-color);
+                @media (min-width: 991.98px) {
+                    &:hover {
+                        color: var(--hover-link-color);
+                    }
+                }
+            }
+        }
+    }
+}
+// =================================================
+.header__container {
+}
+.header__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    @media (max-width: 767.98px) {
+        height: 80px;
+    }
+}
+// =================================================
+.header__block-logo {
+    height: 40px;
+    width: 212px;
+    margin: 0px 25px 0px 0px;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    @media (max-width: 767.98px) {
+        width: 160px;
+        height: 30px;
+    }
+}
+// =================================================
+.header__block-menu {
+    display: flex;
+    flex: 0 1 74.5%;
+    @media (max-width: 991.98px) {
+        display: flex;
+        flex: unset;
+        justify-content: unset;
+        flex-direction: column;
+        position: fixed;
+        z-index: -1; // понижаю, чтобы header стал для него перекрывающей плашкой, если будет скролл
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.4);
+        padding: 130px 30px 30px;
+        overflow: auto;
+    }
+    &.active {
+        left: 0;
+        .menu__link {
+            color: var(--main-color);
+        }
+        .menu__contacts-phone {
+            a {
+                color: var(--main-color);
+            }
+        }
+    }
+}
+.header__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    @media (max-width: 991.98px) {
+        display: flex;
+        flex: unset;
+        justify-content: unset;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // Не указываю изначально высоту, чтобы сама подстраивалась под контект, чтобы работал норм скролл, то надо height задавать 100% (в media)
+        background-color: #FFFFFF;
+        padding: 130px 30px 30px;
+        overflow: auto;
+    }
+    @media screen and (max-width: 991.98px) and (max-height: 429.98px) {
+        height: 100%;
+    }
+    @media (max-width: 767.98px) {
+        padding: 100px 30px 30px;
+    }
+}
+.menu {
+}
+// =================================================
+.menu__body {
+    margin: 0px 25px 0px 0px;
+    @media (max-width: 991.98px) {
+        margin: 0;
+    }
+}
+.menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    @media (max-width: 991.98px) {
+        flex-direction: column;
+        text-align: center;
+        margin: 0px 0px 60px 0px;
+    }
+    @media (max-width: 767.98px) {
+        margin: 0px 0px 40px 0px;
+    }
+}
+// =================================================
+.menu__item {
+    &:not(:last-child) {
+        margin: 0px 40px 0px 0px;
+        @media (max-width: 1345.98px) {
+            margin: 0px 20px 0px 0px;
+        }
+        @media (max-width: 991.98px) {
+            margin: 0px 0px 20px 0px;
+        }
+    }
+}
+.menu__link {
+    @include fontz(14);
+    line-height: 130%;
+    color: #FFFFFF;
+    
+    @media (min-width: 991.98px) {
+        &:hover {
+            color: var(--hover-link-color);
+        }
+    }
+    @media (max-width: 991.98px) {
+        @include fontz(18);
+    }
+    @media (max-width: 479.98px) {
+        @include fontz(14);
+    }
+}
+// =================================================
+.menu__contacts {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    @media (max-width: 991.98px) {
+        min-height: unset;
+    }
+    @media (max-width: 479.98px) {
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
+// =================================================
+.menu__contacts-socials {
+    display: flex;
+    align-items: center;
+    position: relative;
+    a {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 3px solid #191919;
+        -webkit-appearance: none;
+        box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.6);
+        &:first-child {
+            background-color: #4F74A7;
+            z-index: 3;
+        }
+        &:nth-child(2) {
+            background-color: #DB271E;
+            left: -10px;
+            z-index: 2;
+            @media (max-width: 991.98px) {
+                left: unset;
+            }
+        }
+        &:last-child {
+            background-color: #51A0C1;
+            left: -20px;
+            z-index: 1;
+            @media (max-width: 991.98px) {
+                left: unset;
+            }
+        }
+        @media (min-width: 991.98px) {
+            &:hover {
+                width: 52px;
+                height: 52px;
+            }
+        }
+        @media (max-width: 991.98px) {
+            border: unset;
+            width: 40px;
+            height: 40px;
+            &:not(:last-child) {
+                margin: 0px 10px 0px 0px;
+            }
+        }
+    }
+    @media (max-width: 991.98px) {
+        order: 2;
+    }
+}
+.menu__contacts-phone {
+    display: flex;
+    flex-direction: column;
+    a {
+        color: #FFFFFF;
+        @include fontz(20);
+        line-height: 130%;
+        font-weight: 700;
+        white-space: nowrap;
+        &:last-child {
+            display: none;
+            @media (max-width: 991.98px) {
+                display: block;
+            }
+        }
+        @media (min-width: 991.98px) {
+            &:hover {
+                color: var(--hover-link-color);
+            }
+        }
+        @media (max-width: 991.98px) {
+            &:not(:last-child) {
+                margin: 0px 0px 4px 0px;
+            }
+        }
+        @media (max-width: 767.98px) {
+            @include fontz(14);
+        }
+    }
+    @media (max-width: 991.98px) {
+        margin: 0px 80px 0px 0px;
+    }
+    @media (max-width: 479.98px) {
+        margin: 0px 15px 0px 0px;
+    }
+}
+// =================================================BURGER
+.header__burger-button {
+    display: none;
+    @media (max-width: 991.98px) {
+        display: block;
+        background: var(--burger-bcg);
+        position: relative;
+        flex: 0 0 40px;
+        height: 40px;
+        cursor: pointer;
+        border: 1px solid #FFFFFF;
+        border-radius: 3px;
+        
+        @media (max-width: 767.98px) {
+            flex: 0 0 30px;
+            height: 30px;
+        }
+        &::before,&::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            margin: 0px 0px 0px -9px;
+            background-color: #FFFFFF;
+            height: 2px;
+            width: 18px;
+            
+            @media (max-width: 767.98px) {
+                width: 14px;
+                margin: 0px 0px 0px -7px;
+            }
+        }
+        &::before {
+            top: 12px;
+            @media (max-width: 767.98px) {
+                top: 8px;
+            }
+        }
+        &::after {
+            bottom: 12px;
+            @media (max-width: 767.98px) {
+                bottom: 8px;
+            }
+        }
+        span {
+            position: absolute;
+            left: 50%;
+            margin: -1px 0px 0px -9px;
+            top: 50%;
+            background-color: #FFFFFF;
+            height: 2px;
+            border-radius: 2px;
+            width: 18px;
+            
+            @media (max-width: 767.98px) {
+                width: 14px;
+                margin: -1px 0px 0px -7px;
+            }
+        }
+        &.active {
+            border: unset;
+            &::before,&::after {
+                top: 50%;
+                @media (max-width: 767.98px) {
+                    width: 14px;
+                    margin: -1px 0px 0px -7px;
+                }
+            }
+            &::before {
+                transform: rotate(45deg);
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
+            & span {
+                transform: scale(0);
+            }
+        }
+    }
+}
